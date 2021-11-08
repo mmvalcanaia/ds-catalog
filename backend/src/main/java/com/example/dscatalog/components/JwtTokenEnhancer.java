@@ -16,7 +16,6 @@ import com.example.dscatalog.repositories.UserRepository;
 @Component
 public class JwtTokenEnhancer implements TokenEnhancer{
 
-	
 	@Autowired
 	private UserRepository userRepository;
 	
