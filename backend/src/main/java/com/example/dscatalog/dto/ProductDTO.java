@@ -54,7 +54,6 @@ public class ProductDTO implements Serializable{
 		date = entity.getDate();
 	}
 	
-	
 	public ProductDTO(Product entity, Set<Category> categories) {
 		this(entity); //calls the constructor above that only receives a Product as a parameter.
 		categories.forEach(category -> this.categories.add(new CategoryDTO(category)));
