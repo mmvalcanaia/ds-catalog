@@ -1,13 +1,9 @@
-import './assets/styles/custom.scss';
 import './App.css';
-import Routes from 'Routes';
 
 function App() {
   return (
-    <Routes />
+    <h1>Hello DSCatalog</h1>
   );
-
 }
 
 export default App;
-
