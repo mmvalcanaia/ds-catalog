@@ -1,10 +1,14 @@
 import './styles.css';
 
-const ProductPrice = () => {
-  return (
+type Props = {
+  price: number;
+}
+
+const ProductPrice = ({ price } : Props) => {
+  return ( 
     <div className="product-price-container">
       <span>R$</span>
-      <h3>120.99</h3>
+      <h3>{price}</h3>
     </div>
   );
 };

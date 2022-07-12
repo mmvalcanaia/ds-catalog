@@ -1,23 +1,27 @@
 import ProductCard from 'components/ProductCard';
+import { Product } from 'types/product';
 
 const Catalog = () => {
+  const product: Product = {
+    id: 1,
+    name: 'Tv',
+    description: 'tv',
+    price: 2190.0,
+    imgUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQgNFREWFhURExMYHSkiGCYxHRYVIT0tMSotOi4uFx8/Oz84QygtOCsBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALYBFQMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAAAgMBBQQHCAb/xABHEAABAwECBQ8JBgUFAAAAAAAAAQIDBAUREjFRlNEGBxMUFSFBUlRhcXOSobMIFjSBkbGywtIlVXKTosEiU4Lh8SMkMjNC/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AO8QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcGotmiie6OWrpY5G7zmPqImPZvX76Kt6Fe79n8uo86h0gbIGu3eoOXUecxaTO7tBy2kzmLSBsAa/dyh5bSZzFpG7lDy2kzmLSBsAa/dyh5bSZxFpG7lDy2kziLSBsAa/dyh5bSZxFpG7lDy2kzmLSBsAa/d2g5bSZzFpMbvUHLqPOYtIGxBrt3qDl1HnMWkbv0HLqPOYdIGxBrt37P5dR5zDpMecFn8vo86h0gbIGs84bO5fRZ1D9Q84rO5fRZ1D9QGzBrPOKzvvCizqH6jHnHZv3hRZ3D9QG0Bq/OSzfvChzuH6jHnLZn3jQ53B9QG1BxqG0KepRXU88M7WrgudDKyVGLkVWqtxyQAAAAAAAAAAAAAAAAPgq6ijqLSqmy4eCxqORGSPj/iVU31wV3yMmp2j4sucTfUWPlutSu5msTvORJMBqJrCpUxNk/Ol0nAnsqBMSSfmv0m6nkNbUSAaaegjTFh/mO0mtqKRicL+243FQ41lQ4DVTQNyu7SnClhTK7tKbKZTgTAcCSJMq+04740yr7TlynGeBxns519pW5OdfaXPKXAVucvGUgr3cZe4k4rUCKyOy9yEVmfxu5A4rUDKzv43chFZ38buQwpFQMrUP43cmgitQ/jdzdBFSCgTWofxu5ugitTJxv0t0EFIqB6G1h2I2mr0ThngX2xIdonV2sS++nr+tpfAQ7RAAAAAAAAAAAAAAAAA60rJrrVr+lqd6lj6jnNXbE2Datf+JPiUrWp5wOfLOcGaYokqDiSzgSnlNfM8lLKcOWQCEzjhSuLZXnElcBVIpxnqWyOOO9QK3lTixylTlArcVqTcVqBBxWpY4rUCKkVJKRUCKkFJqQUCKkVJKYA9Aawfo1f1tN4R2qdU6wHotd1lN4SnawAAAAAAAAAAAAAAAAHSmqOa61q/rLv1KcNaghqslute0OtX3mu2cDYOnKJJjiOmKnSgciSU40khU+UpfIBKR5xpHh7yh7wMPcUucZc4qcoBylTlMuUrVQCqQcZVSCqBFSCklUgoGFIqSUioEVIqZUwBFTBIwB335Py/7Wt6ym8NTtg6l8nz0Wu/HTfA47aAAAAAAAAAAAAAAAAA89atX3WzaPXKanZTnau33W1aPX/shpdkA5aykHSHGWQirwL3SFLpCtXlavAm55U5xFzitzgJOcVucYVxBVAyqkFUKpBVAKpBVMqpFVAwphQphQMKRUypFQMGAYAAGAO+fJ79FruspvgcdtHUnk9ei1/WU/wOO2wAAAAAAAAAAAAAAAAPNmuA77ctLr0+BposI3GuI663bT69vhsNBhgXYRhXlOGRVwFqvIK4griCuAmriCuIq4irgJKpFVIqpFVAyqkVUwqmFUAqmLwYAGFUEVUApFQqmABgAAYAA748nn0Wv62n+Bx22dSeTx6JX9dT+Gp22AAAAAAAAAAAAAAAAB5j1x1+3rU69vhMPnsI32uSv2/anXs8GM+dvAswiKuIYRhXATVSKuIK4iqgTVxFVIqphVAzeYvMXmLwMqpi8wYAzeYvBG8DKqRVQqkQMmAYAAGAAAA748nj0Sv66Dw1O3DqPyd/RK/r4PDO3AAAAAAAAAAAAAAAAAOgdXeoe16i2LQqYLPmmgmma6KRktO1JG7ExFW5zr8aLwGgXUFbKY7Lq/U6J3uU9OgDy5JqMtVuOy7Q/pgc/wCFDg1tiVVO1X1NFXU8aKiLJPTSwxNVVuRFe5qJ3nqO2rXp6CnfU1MiMjYn9Ujrt5rU4VPPWqu2LT1U1rYKWB8kbHXw0zP+umbi2WVy7zfxLdkTHcofMUtEs+FsEVRPgXYewRvm2K++7CwGrdiX2KWrY83DS1qdNPKnyHdutXre1liTVE1RVQSJUQRsdBCx64MiOvR2GqpivcmLfwuC7f7IA8jrZb0xwVSdMMifKQWguxsnTpY5P2PXYA8grTRpj2ROn/BBYoOF6p0uTQewQB492On/AJv62nKq6KjYiLHVLJvMwkViR7GqtvVL71vuXe5z1vcnMLkyIB492On/AJv6mhIIVxPcvQqL+x7CMgePdpxri2RehP7Eks2/FHUL0RuX5T2AAPIKWNIuKnq16IJF+Umlg1C4qSvXopZl+Q9dgDx1tJuHsd0qS4ex7EqXS7JfdgYF199+9ddfebOPUfaLv+NmWr66GoT3sPqdWetRa8D6itjWK0WyTyzytgY5J2o5yuw9idfhb6rvIqr08H1etfrkYSR2faT7np/pwVMirfem9scqr7L19eUDrJmoK1XYrMtD1wq33oXJrc2yuKzKz1rCnvU9SgDrjWVsCts6mrWVlNJTOkmidG2R0blkakdyr/Cq8J2OAAAAAAAAAAAAAAAAABhW3kFiTn9pYAPmdWGo2C2Epo55po4qeV0zo4sG+oVUuRFcqLg72Em9xlNpZFg0lDCkFJC2CJP/ACy9FkdxnuxuXnVVU2QAp2s3K7tKNrNyu7SlwAo2q3K7tKNqtyu7Sl4Ao2q3K7tKNqNyu7Sl4Ao2o3K7tKNqNyu7Sl4Ao2o3K7tKNqNyu7Sl4Ao2q3K7tKNqtyu7Sl4Ao2q3K7tKZ2s3K7tKXACna7cru0p8rqu1ubNtW972OgqVx1MGCj5kySNVLn4rt/fTgU+wAHFo6PY4oo3PdI6ONjFkXeWZWtRFcqcF915ekac/tJgDCJcZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==',
+    date: '2020-07-14T10:00:00Z',
+    categories: [
+      {
+        id: 1,
+        name: 'Livros',
+      },
+    ],
+  };
+
   return (
     <div className="container my-4">
       <div className="row">
         <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard />
-        </div>
-        <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard />
-        </div>
-        <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard />
-        </div>
-        <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard />
-        </div>
-        <div className="col-sm-6 col-lg-4 col-xl-3">
-          <ProductCard />
+          <ProductCard product={product}/>
         </div>
       </div>
     </div>
