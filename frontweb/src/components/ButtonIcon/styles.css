@@ -20,7 +20,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 }
+
 
 @media (min-width: 576px) {
   .btn-icon-container {
