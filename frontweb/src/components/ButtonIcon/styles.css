@@ -1,3 +1,40 @@
-.btn-icon{
-    height: 50px;
+.btn-container {
+  display: flex;
+}
+
+.btn-container button {
+  border-radius: 10px 0 0 10px;
+}
+
+.btn h6 {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btn-icon-container {
+  height: 50px;
+  width: 50px;
+  background: #33569b;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .btn-icon-container {
+    height: 70px;
+    width: 70px;
+  }
+
+  .btn h6 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-container button {
+    width: 400px;
+  }
 }
