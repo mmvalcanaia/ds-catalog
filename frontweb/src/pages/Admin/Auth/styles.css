@@ -10,7 +10,6 @@
 
 .auth-form-container {
   width: 100%;
-  border: 1px solid red;
 }
 
 @media (min-width: 576px) {
