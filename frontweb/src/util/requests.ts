@@ -5,7 +5,7 @@ import jwtDecode from 'jwt-decode';
 
 type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
 
-type TokenData = {
+export type TokenData = {
   exp: number;
   user_name: string;
   authorities: Role[];
@@ -71,6 +71,10 @@ export const getAuthData = () => {
   const str = localStorage.getItem(tokenKey) ?? '{}'; //local storage só trabalaha com strings, o ?? é o operador de coalescencia nulo e passa uma string com um objeto vazio dentro
   return JSON.parse(str) as LoginResponse; //casting para ser type save e compativel com o esperado
 };
+
+export const removeAuthData = () => {
+  localStorage.removeItem(tokenKey);
+}
 
 // Add a request interceptor
 axios.interceptors.request.use(
