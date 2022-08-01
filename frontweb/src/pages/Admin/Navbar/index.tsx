@@ -4,7 +4,7 @@ import './styles.css';
 
 const Navbar = () => {
   return (
-    <nav className="adim-nav-container">
+    <nav className="admin-nav-container">
       <ul>
         <li>
           <NavLink to="/admin/products" className="admin-nav-item">

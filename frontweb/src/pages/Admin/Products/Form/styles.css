@@ -1,0 +1,14 @@
+.product-crud-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.product-crud-form-card {
+  padding: 20px;
+}
+
+.product-crud-form-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: #263238;
+}
