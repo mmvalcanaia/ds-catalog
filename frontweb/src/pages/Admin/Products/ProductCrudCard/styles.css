@@ -1,48 +1,93 @@
-.product-crud-card{
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+.product-crud-card {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
-.product-crud-card-top-container{
-    text-align: center;
-    padding: 16px 0;
-    border-bottom: 1px solid #E1E1E1;
+.product-crud-card-top-container {
+  text-align: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #e1e1e1;
 }
 
-.product-crud-card-top-container img{
-    width: 160px;
-    height: 160px;
+.product-crud-card-top-container img {
+  width: 160px;
+  height: 160px;
 }
 
-.product-crud-card-bottom-container{
-    padding: 15px;
+.product-crud-card-bottom-container {
+  padding: 15px;
 }
 
-.product-crud-card-bottom-container h6{
-    font-size: 18px;
-    color: #263238;
+.product-crud-card-bottom-container h6 {
+  font-size: 18px;
+  color: #263238;
 }
 
-.product-crud-card-category-container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 15px;
+.product-crud-card-category-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
 }
 
-.product-crud-buttons-container{
-    padding: 0 15px;
+.product-crud-buttons-container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-crud-card-button {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 110px;
+  height: 40px;
+}
+
+.product-crud-card-button + .product-crud-card-button {
+  margin-left: 10px;
+}
+
+@media (min-width: 768px) {
+  .product-crud-card {
+    padding-bottom: 0;
     display: flex;
     justify-content: space-between;
+  }
+
+  .product-crud-card-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px
+  }
+
+  .product-crud-buttons-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .product-crud-card-button {
+    width: 140px;
+  }
+
+  .product-crud-card-button + .product-crud-card-button {
+    margin-left: 0;
+    margin-bottom: 22px;
+  }
+
+  .product-crud-card-top-container {
+    border-right: 1px solid #e1e1e1;
+    border-bottom: none;
+  }
 }
 
-.product-crud-card-button{
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 10px;
-    width: 110px;
-    height: 40px;
-}
+@media (min-width: 992px) {
+  .product-crud-card-bottom-container h6 {
+    font-size: 24px;
+  }
 
-.product-crud-card-button + .product-crud-card-button{
-    margin-left: 10px;
+  .product-crud-card-button {
+    width: 220px;
+  }
 }
