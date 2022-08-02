@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px
+    margin-left: 20px;
   }
 
   .product-crud-buttons-container {
@@ -69,11 +69,11 @@
 
   .product-crud-card-button {
     width: 140px;
+    margin-top: 22px;
   }
 
   .product-crud-card-button + .product-crud-card-button {
     margin-left: 0;
-    margin-bottom: 22px;
   }
 
   .product-crud-card-top-container {
