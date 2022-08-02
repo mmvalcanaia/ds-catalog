@@ -8,7 +8,7 @@ import { requestBackendLogin } from 'util/requests';
 import { saveAuthData } from 'util/storage';
 import { getTokenData } from 'util/auth';
 
-type FormData = {
+type Credentials = {
   username: string;
   password: string;
 };
@@ -27,11 +27,11 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<Credentials>();
 
   const history = useHistory();
 
-  const onSubmit = (formData: FormData) => {
+  const onSubmit = (formData: Credentials) => {
     requestBackendLogin(formData)
       .then((response) => {
         saveAuthData(response.data);
