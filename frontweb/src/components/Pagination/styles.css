@@ -23,6 +23,10 @@
   background: #407bff;
 }
 
+.pagination-link-active {
+  background: #407bff;
+}
+
 .arrow-inactive {
   color: #e1e1e1;
 }
@@ -31,6 +35,11 @@
   color: #407bff;
 }
 
-.preview-arrow{
-    transform: rotate(-180deg);
+.previous-arrow {
+  transform: rotate(-180deg);
+  color: #407bff;
+}
+
+.next-arrow {
+  color: #407bff;
 }
