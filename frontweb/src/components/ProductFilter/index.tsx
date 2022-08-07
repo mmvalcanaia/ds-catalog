@@ -42,7 +42,7 @@ const ProductFilter = () => {
             placeholder="Nome do produto"
             className="form-control"
           />
-          <button>
+          <button className='product-filter-button-search-icon'>
             <SearchIcon />
           </button>
         </div>
@@ -55,6 +55,8 @@ const ProductFilter = () => {
                 <Select
                   {...field}
                   isClearable
+                  classNamePrefix='product-filter-select'
+                  placeholder="Categoria"
                   options={selectCategories}
                   getOptionLabel={(category: Category) => category.name}
                   getOptionValue={(category: Category) => String(category.id)}
@@ -62,7 +64,7 @@ const ProductFilter = () => {
               )}
             />
           </div>
-          <button className="btn btn-outline-secondary">Pesquisar</button>
+          <button className="btn btn-outline-secondary btn-product-filter-clear">LIMPAR<span className='btn-product-filter-show'> FILTRO</span></button>
         </div>
       </form>
     </div>
