@@ -29,6 +29,7 @@
 
 .product-filter-bottom-container {
   display: flex;
+  align-items: flex-end;
 }
 
 .product-filter-category-container {
@@ -71,5 +72,29 @@
   .product-filter-container {
     margin: 0 0 0 20px;
     flex: 1;
+    padding: 10px 15px;
+  }
+
+  .product-filter-form{
+    display: flex;
+  }
+
+  .product-filter-name-container{
+    flex: 1;
+    margin: 0 20px 0 0;
+  }
+
+  .product-filter-bottom-container{
+    flex: 1;
+  }
+
+  .btn-product-filter-show {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-product-filter-show {
+    display: unset;
   }
 }
