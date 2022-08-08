@@ -7,19 +7,30 @@ import { Product } from 'types/product';
 import { AxiosRequestConfig } from 'axios';
 import { requestBackend } from 'util/requests';
 import Pagination from 'components/Pagination';
-import ProductFilter from 'components/ProductFilter';
+import ProductFilter, { ProductFilterData } from 'components/ProductFilter';
 
 type ControlComponentsData = {
   activePage: number;
+  filterData: ProductFilterData;
 };
 
 const List = () => {
   const [page, setPage] = useState<SpringPage<Product>>();
   const [controlComponentsData, setControlComponentsData] =
-    useState<ControlComponentsData>({ activePage: 0 });
+    useState<ControlComponentsData>({
+      activePage: 0,
+      filterData: { name: '', category: null },
+    });
 
   const handlePageChange = (pageNumber: number) => {
-    setControlComponentsData({ activePage: pageNumber });
+    setControlComponentsData({
+      activePage: pageNumber,
+      filterData: controlComponentsData.filterData,
+    });
+  };
+
+  const handleSubmitFilter = (data: ProductFilterData) => {
+    setControlComponentsData({ activePage: 0, filterData: data });
   };
 
   const getProducts = useCallback(() => {
@@ -29,6 +40,8 @@ const List = () => {
       params: {
         page: controlComponentsData.activePage,
         size: 3,
+        name: controlComponentsData.filterData.name,
+        categoryId: controlComponentsData.filterData.category?.id,
       },
     };
     requestBackend(config).then((response) => {
@@ -48,7 +61,7 @@ const List = () => {
             ADICIONAR
           </button>
         </Link>
-        <ProductFilter />
+        <ProductFilter onSubmitFilter={handleSubmitFilter} />
       </div>
       <div className="row">
         {page?.content.map((product) => (
@@ -58,6 +71,7 @@ const List = () => {
         ))}
       </div>
       <Pagination
+        forcePage={page?.number}
         pageCount={page ? page.totalPages : 0}
         range={3}
         onChange={handlePageChange}
