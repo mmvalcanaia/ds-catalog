@@ -27,14 +27,6 @@
   background: #407bff;
 }
 
-.arrow-inactive {
-  color: #e1e1e1;
-}
-
-.arrow-active {
-  color: #407bff;
-}
-
 .previous-arrow {
   transform: rotate(-180deg);
   color: #407bff;
@@ -44,7 +36,15 @@
   color: #407bff;
 }
 
-.pagination-arrow-container{
+.arrow-inactive {
+  color: #e1e1e1;
+}
+
+.arrow-active {
+  color: #407bff;
+}
+
+.pagination-arrow-container {
   display: flex;
   align-items: center;
 }
