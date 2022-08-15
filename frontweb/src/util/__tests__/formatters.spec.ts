@@ -11,15 +11,3 @@ describe('format price with positive numbers', () => {
   });
 });
 
-
-describe('format price with non-positive numbers', () => {
-    test('formatPrice should format number pt-BR when given value 0', () => {
-      const result = formatPrice(0);
-      expect(result).toEqual('0,00');
-    });
-    test('formatPrice should format number pt-BR when given value -5.1', () => {
-      const result = formatPrice(-5.1);
-      expect(result).toEqual('-5,10');
-    });
-  });
-  
