@@ -3,6 +3,12 @@ import { Router } from 'react-router-dom';
 import Catalog from '..';
 import history from 'util/history';
 import '@testing-library/jest-dom';
+import { server } from './fixtures';
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+  
 
 test('should render Catalog with products', async () => {
   render(
@@ -14,7 +20,7 @@ test('should render Catalog with products', async () => {
   expect(screen.getByText('Catálogo de produtos')).toBeInTheDocument();
 
   await waitFor(() => {
-    expect(screen.getByText('Smart TV')).toBeInTheDocument();
+    expect(screen.getByText('Macbook Pro')).toBeInTheDocument();
   });
 
 });
