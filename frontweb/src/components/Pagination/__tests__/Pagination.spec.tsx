@@ -71,6 +71,6 @@ describe('Pagination tests', () => {
 
     const page2 = screen.getByText('2');
     userEvent.click(page2);
-    expect(onChange).toHaveBeenCalledWith(1);
+    expect(onChange).toHaveBeenCalledWith(1 );
   });
 });
