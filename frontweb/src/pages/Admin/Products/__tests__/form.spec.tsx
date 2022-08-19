@@ -1,8 +1,4 @@
-import {
-  render,
-  screen,
-  waitFor
-} from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Router, useParams } from 'react-router-dom';
 import selectEvent from 'react-select-event';
@@ -28,7 +24,7 @@ describe('Product form create tests', () => {
     });
   });
 
-  test('Should render form', async () => {
+  test('Should show toast and redirect when form submited correctly', async () => {
     render(
       <Router history={history}>
         <ToastContainer />
@@ -60,5 +56,21 @@ describe('Product form create tests', () => {
     });
 
     expect(history.location.pathname).toEqual('/admin/products');
+  });
+
+  test('Should show five error messages when submiting empty form', async () => {
+    render(
+      <Router history={history}>
+        <Form />
+      </Router>
+    );
+
+    const submitButton = screen.getByRole('button', { name: /salvar/i });
+    userEvent.click(submitButton);
+
+    await waitFor(() => {
+      const messages = screen.getAllByText('Campo obrigatório');
+      expect(messages).toHaveLength(5);
+    });
   });
 });
