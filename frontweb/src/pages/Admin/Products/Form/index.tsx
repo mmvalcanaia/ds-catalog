@@ -89,6 +89,7 @@ const Form = () => {
                   })}
                   type="text"
                   name="name"
+                  data-testid="name"
                   placeholder="Nome do produto"
                   className={`form-control base-input ${
                     errors.name ? 'is-invalid' : ''
@@ -100,6 +101,9 @@ const Form = () => {
               </div>
 
               <div className="margin-bottom-30">
+                <label htmlFor="categories" className="d-none">
+                  Categorias
+                </label>
                 <Controller
                   name="categories"
                   rules={{ required: true }}
@@ -114,6 +118,7 @@ const Form = () => {
                       getOptionValue={(category: Category) =>
                         String(category.id)
                       }
+                      inputId="categories"
                     />
                   )}
                 />
@@ -138,6 +143,7 @@ const Form = () => {
                       disableGroupSeparators={true}
                       value={field.value}
                       onValueChange={field.onChange}
+                      data-testid="price"
                     />
                   )}
                 />
@@ -157,6 +163,7 @@ const Form = () => {
                   })}
                   type="text"
                   name="imgUrl"
+                  data-testid="imgUrl"
                   placeholder="URL da imagem do produto"
                   className={`form-control base-input ${
                     errors.name ? 'is-invalid' : ''
@@ -175,6 +182,7 @@ const Form = () => {
                   })}
                   rows={10}
                   name="description"
+                  data-testid="description"
                   placeholder="Descrição"
                   className={`form-control base-input h-auto ${
                     errors.description ? 'is-invalid' : ''
