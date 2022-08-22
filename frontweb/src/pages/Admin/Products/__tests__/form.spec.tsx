@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import history from 'util/history';
 import Form from '../Form';
 import { productResponse, server } from './fixtures';
-import '@testing-library/jest-dom';
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

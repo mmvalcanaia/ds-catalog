@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import Pagination from '..';
-import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 describe('Pagination tests', () => {

@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import ProductPrice from "..";
-import '@testing-library/jest-dom';
 
 test('should render ProductPrice', () => {
     const price = 100.5;

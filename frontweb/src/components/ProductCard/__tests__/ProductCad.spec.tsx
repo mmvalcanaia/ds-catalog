@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import ProductCard from "..";
 import { Product } from "types/product";
-import '@testing-library/jest-dom';
 
 test('should render ProductCard', () =>{
     const product : Product =  {
